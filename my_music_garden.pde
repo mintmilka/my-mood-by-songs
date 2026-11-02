@@ -4,7 +4,7 @@ Table songs;
 void setup() {
   size( 900, 700 ) ;
   
-  songs = loadTable("songs1.csv", "header") ;
+  songs = loadTable("songs.csv", "header") ;
   for( int s = 0; s < songs.getRowCount(); s++ ) {
   
     String song = songs.getString (s, "Song") ;
@@ -16,10 +16,25 @@ void setup() {
     println(ganre);
     println(topic);
     println(time);
-  }
   
+if (topic.equals ("Love")) {
+     fill(#E63946);
+   }
+  else if (topic.equals ("Sadness")) {
+     fill(#457BCE) ;
+  }
+  else if (topic.equals ("Motivation")) {
+    fill(#F4D35E) ;
+  }
+  else if (topic.equals ("Energetic")) {
+    fill (#52B788) ;
+  }
+  else {
+    fill(#FFFFFF);
+  }
+ } 
 }
-
+  
 void draw() {
   background(#FFF9F2) ;
   
