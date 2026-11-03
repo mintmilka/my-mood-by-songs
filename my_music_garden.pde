@@ -44,4 +44,20 @@ void setup() {
    else {
      fill(0,0,0);
    }
-  
+
+  //Starting points according to x-axis and y-axis
+float x = 90;
+float y = 90;
+
+if (time.equals ("Day")) {
+  // Secure the place for each shape to avoid overlaping, ensures positioning according to the time area and x y
+  x = 90 + (s%5)* 70; //Shapes are located on the left
+  y = 90 + (s/5) * 70;
+  }
+
+else if (time.equals ("Night")) {
+  // Move shape on the right 
+  x = 510 + (s%5) * 70; //Finding reminder will help to locate shapes in a rows of 5 songs each
+  y = 90 + (s/5) * 70; 
+}
+
