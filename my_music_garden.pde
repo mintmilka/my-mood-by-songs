@@ -18,18 +18,18 @@ void setup() {
   noStroke() ;
   
 //Using for loop to count the row remaining for the csv reading
-  for( int s = 0; s < songs.getRowCount(); s++ )
+  for( int s = 0; s < songs.getRowCount(); s++ ) //Counts rows in the file, once s = row count the loop will break
   {
   //Make program read the csv file
-    String song = songs.getString (s, "Song") ;
+    String song = songs.getString (s, "Song") ; 
     String ganre = songs.getString(s, "Ganre") ;
     String topic = songs.getString(s, "Topic") ;
     String time = songs.getString(s, "Time") ;
     
-   //Check the topic and colour 
+   //Check the topic and colour, goes throw each of the statement 
   
     if (topic.equals ("Sadness")) {
-     fill(190, 215, 235);
+     fill(190, 215, 235); 
     }
     else if (topic.equals ("Love")) {
      fill(170, 75, 95) ;
@@ -60,4 +60,24 @@ else if (time.equals ("Night")) {
   x = 510 + (s%5) * 70; //Finding reminder will help to locate shapes in a rows of 5 songs each
   y = 90 + (s/5) * 70; 
 }
+
+//Check the ganre for the shape
+//Draws a circle around coordinates, x = 90 and y = 90
+if (ganre.equals ("Pop")) {
+  ellipse(x, y, 40, 40) ;
+}
+else if (ganre.equals ("Rock")){
+rect( x - 20, y - 20, 40, 40) ;
+}
+// Draw a triangle according to the points 
+else if (ganre.equals( "Electronic")) {
+  triangle(x, y - 20, x - 20, y + 20, x + 20, y + 20);
+}
+//Draws any quad according to the coordinates given
+else if (ganre.equals("R&B")) {
+  quad(x, y - 20, x + 20, y, x, y + 20, x - 20, y) ;
+}
+ } 
+  } 
+  
 
